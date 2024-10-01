@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=Zen+Kaku+Gothic+New:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <!-- 以下のコードは変更なし... -->
+    <header class="header">
+      <div class="header-logo">
+        <a href="index.html">KOKI YOSHIOKA</a>
+      </div>
+
+      <div>
+        <ul class="header-list">
+          <li><a href="main.html">ABOUT</a></li>
+          <li><a href="#">WORKS</a></li>
+          <li><a href="#">SKILL</a></li>
+          <li><a href="#">CONTACT</a></li>
+          <li>
+            <button id="play-bgm" class="play-button">BGMを再生</button>
+            <button id="stop-bgm" class="stop-button">BGMを停止</button>
+            <audio id="bgm" src="Strolls_of_Fall.mp3" preload="auto"></audio>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <div class="first-text">
+          <div class="letters">
+            <div class="letter">ヤッホイ</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="center-text">
+        こちらは一流エンジニアを目指しているKoki
+        Yoshiokaのポートフォリオサイトでございます。独学で日々頑張っています。
+        未熟すぎますが、やる気だけは伝わるかと思います。ぜひのんびりとご覧ください。もしよろしければ、アドバイスを頂ければ幸いです。
+      </div>
+
+      <div id="scroll-down" class="scroll-down">&#x2193;</div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-tittle">私の人生を見ていきましょう</div>
+          <div class="year">2002</div>
+          <div class="content">
+            <div class="circle-image">
+              <img src="picture001.jpg" alt="画像" />
+            </div>
+            <div class="text-box">
+              <p>・大阪府寝屋川市にて産声をあげる</p>
+              <p>・将来が期待される(本人談)</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="year">2018</div>
+          <div class="content">
+            <div class="circle-image">
+              <img src="picture002.jpg" alt="画像" />
+            </div>
+            <div class="text-box">
+              <p>大阪府立寝屋川高等学校に入学</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="year">2021</div>
+          <div class="content">
+            <div class="circle-image">
+              <img src="picture003.jpg" alt="画像" />
+            </div>
+            <div class="text-box">
+              <p>大阪府立大学に入学</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="year">2021</div>
+          <div class="content">
+            <div class="circle-image">
+              <img src="picture004.jpg" alt="画像" />
+            </div>
+            <div class="text-box">
+              <p>プログラミングを始める</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="year">2021</div>
+          <div class="content">
+            <div class="circle-image">
+              <img src="picture005.jpg" alt="画像" />
+            </div>
+            <div class="text-box">
+              <p>ポートフォリオサイトを作成</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-set"><h2>Skill Set</h2></div>
+      <div class="canvas-container">
+        <div class="chart-container">
+          <div class="chart">
+            <canvas id="jsSkillChart"></canvas>
+          </div>
+          <div class="chart">
+            <canvas id="pythonSkillChart"></canvas>
+          </div>
+          <div class="chart">
+            <canvas id="htmlSkillChart"></canvas>
+          </div>
+          <div class="chart">
+            <canvas id="cssSkillChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        .chart-container {
+          margin-top: 20px;
+        }
+      </style>
+
+      <script>
+        // HTMLスキルチャート
+        const htmlCtx = document
+          .getElementById("htmlSkillChart")
+          .getContext("2d");
+        const htmlSkillChart = new Chart(htmlCtx, {
+          type: "radar",
+          data: {
+            labels: [
+              "セマンティックマークアップ",
+              "フォーム",
+              "画像",
+              "リンク",
+              "テーブル",
+              "レスポンシブデザイン",
+            ],
+            datasets: [
+              {
+                label: "HTML/CSS",
+                data: [4, 3, 4, 4, 3, 4], // 評価（1〜5）
+                backgroundColor: "rgba(75, 192, 192, 0.2)",
+                borderColor: "rgba(75, 192, 192, 1)",
+                borderWidth: 2,
+              },
+            ],
+          },
+          options: {
+            scale: {
+              ticks: {
+                beginAtZero: true,
+                max: 5,
+              },
+            },
+          },
+        });
+
+        // CSSスキルチャート
+        const cssCtx = document
+          .getElementById("cssSkillChart")
+          .getContext("2d");
+        const cssSkillChart = new Chart(cssCtx, {
+          type: "radar",
+          data: {
+            labels: [
+              "セレクタ",
+              "ボックスモデル",
+              "レイアウト",
+              "カラー",
+              "テキスト",
+              "アニメーション",
+            ],
+            datasets: [
+              {
+                label: "Ruby",
+                data: [4, 4, 3, 4, 3, 3], // 評価（1〜5）
+                backgroundColor: "rgba(255, 99, 132, 0.2)",
+                borderColor: "rgba(255, 99, 132, 1)",
+                borderWidth: 2,
+              },
+            ],
+          },
+          options: {
+            scale: {
+              ticks: {
+                beginAtZero: true,
+                max: 5,
+              },
+            },
+          },
+        });
+      </script>
+      // ここにJavaScriptのコードを書く
+      <script>
+        // JavaScriptスキルチャート
+        const jsCtx = document.getElementById("jsSkillChart").getContext("2d");
+        const jsSkillChart = new Chart(jsCtx, {
+          type: "radar",
+          data: {
+            labels: [
+              "変数",
+              "演算子",
+              "条件分岐",
+              "繰り返し",
+              "関数",
+              "クラス",
+            ],
+            datasets: [
+              {
+                label: "JavaScript",
+                data: [4, 4, 3, 3, 3, 3], // 評価（1〜5）
+                backgroundColor: "rgba(255, 206, 86, 0.2)",
+                borderColor: "rgba(255, 206, 86, 1)",
+                borderWidth: 2,
+              },
+            ],
+          },
+          options: {
+            scale: {
+              ticks: {
+                beginAtZero: true,
+                max: 5,
+              },
+            },
+          },
+        });
+
+        // Pythonスキルチャート
+        const pythonCtx = document
+          .getElementById("pythonSkillChart")
+          .getContext("2d");
+        const pythonSkillChart = new Chart(pythonCtx, {
+          type: "radar",
+          data: {
+            labels: [
+              "変数",
+              "演算子",
+              "条件分岐",
+              "繰り返し",
+              "関数",
+              "クラス",
+            ],
+            datasets: [
+              {
+                label: "PHP",
+                data: [4, 4, 3, 3, 3, 3], // 評価（1〜5）
+                backgroundColor: "rgba(54, 162, 235, 0.2)",
+                borderColor: "rgba(54, 162, 235, 1)",
+                borderWidth: 2,
+              },
+            ],
+          },
+          options: {
+            scale: {
+              ticks: {
+                beginAtZero: true,
+                max: 5,
+              },
+            },
+          },
+        });
+      </script>
+      <footer class="footer"></footer>
+
+      <div class="center">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLScjxJZ4QLloHGpChAtNs70FwRaZEHApE7BfntYsLswkbdS0NA/viewform?embedded=true"
+          width="640"
+          height="752"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          >読み込んでいます…</iframe
+        >
+      </div>
+    </main>
+    <script src="main.js"></script>
+    <script src="snow.js"></script>
+  </body>
+</html>

@@ -1,0 +1,433 @@
+/* main.css */
+
+/* Reset some default styles */
+body,
+h1,
+h2,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box; /* ボックスのサイズを含むように調整 */
+}
+
+/* Global styles */
+body {
+  line-height: 1.6;
+  background-color: #ffffff;
+  margin: 0; /* 全体の余白をリセット */
+}
+
+.header {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box; /* ボックスのサイズを含むように調整 */
+}
+
+.header-logo {
+  font-family: "Caveat", cursive;
+  font-size: 2em;
+}
+
+.header-logo a {
+  text-decoration: none; /* リンクの下線を消す */
+  color: inherit; /* 親要素の色を継承 */
+}
+
+.header-list {
+  display: flex;
+  gap: 20px;
+}
+
+.header-list li {
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+.header-list li:hover {
+  text-decoration: underline;
+}
+
+.header-list a {
+  text-decoration: none; /* リンクの下線を消す */
+  color: inherit; /* 親要素の色を継承 */
+}
+
+.main {
+  padding-top: 150px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto 50px auto; /* ヘッダーの高さ分の余白を追加 */
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 8px;
+  animation: fadeIn 4s forwards;
+  box-sizing: border-box; /* ボックスのサイズを含むように調整 */
+}
+
+.profile {
+  padding-bottom: 30px;
+  padding-left: 30px;
+}
+
+.profile-details {
+  margin-right: 70px;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.name {
+  animation: slideIn 2s forwards;
+}
+
+.birth {
+  animation: slideIn 3s forwards;
+}
+
+.collage {
+  animation: slideIn 4s forwards;
+}
+
+.hobby {
+  animation: slideIn 5s forwards;
+}
+
+.from {
+  animation: slideIn 5.5s forwards;
+}
+
+.profile-list li {
+  margin-bottom: 10px;
+}
+
+.picture img {
+  width: 300px;
+  height: 400px; /* Increase the height value as desired */
+  border-radius: 0;
+  border: 5px solid #000000;
+}
+
+/* 下矢印マークのスタイル */
+.scroll-down {
+  position: fixed;
+  font-weight: bold;
+  bottom: 20px;
+  right: 20px;
+  font-size: 4em; /* 矢印を大きく */
+  cursor: pointer;
+  color: #ffffff; /* 矢印の色を変更 */
+  z-index: 1000;
+  opacity: 0; /* 最初は見えなくする */
+  animation: fadeIn 1s forwards 6s, bounce 2s infinite 4s; /* フェードインに遅延を追加し、バウンドアニメーション */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+}
+
+.scroll-down:hover {
+  opacity: 0.7; /* マウスホバー時に少し透明に */
+}
+
+.play-button {
+  background-color: #000000; /* Green */
+  border: none;
+  color: white;
+  padding: 13px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.stop-button {
+  background-color: #000000; /* Green */
+  border: none;
+  color: white;
+  padding: 13px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.self-introduction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto 50px auto; /* ヘッダーの高さ分の余白を追加 */
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 8px;
+  animation: fadeIn 4s forwards;
+  box-sizing: border-box; /* ボックスのサイズを含むように調整 */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f0f0;
+}
+
+.timeline {
+  position: relative;
+  padding: 50px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 500px;
+}
+
+.timeline-item {
+  position: relative;
+  margin: 20px 0;
+  margin-bottom: 200px;
+}
+
+.year {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.circle-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 30px;
+}
+
+.circle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-box {
+  background-color: #000000;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: white;
+  margin-left: 30px;
+}
+
+.text-box p {
+  margin-bottom: 10px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #000000;
+}
+
+/* Additional styles */
+body {
+  color: #000000;
+}
+
+.header {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.header-logo a {
+  color: #ffffff;
+}
+
+.header-list li:hover {
+  color: #ffffff;
+}
+
+.header-list a {
+  color: #ffffff;
+}
+
+.container {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.profile-details {
+  color: #ffffff;
+}
+
+.profile-list li {
+  color: #ffffff;
+}
+
+.picture img {
+  border: 5px solid #ffffff;
+}
+
+.scroll-down {
+  color: #ffffff;
+}
+
+.play-button,
+.stop-button {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body {
+  background-color: #000000;
+}
+
+.year {
+  color: #ffffff;
+}
+
+.text-box {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: bold;
+  text-align: center;
+}
+
+.timeline::before {
+  background-color: #ffffff;
+  margin-top: 600px;
+  margin-bottom: 100px;
+}
+
+.letter {
+  opacity: 0;
+  animation: fadeInOut 2s forwards;
+  font-size: 50px;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.text-after {
+  opacity: 0;
+}
+
+.timeline-tittle {
+  color: #ffffff;
+  padding-bottom: 70px;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 1s;
+  text-shadow: #ffffff 10px 10px 10px;
+}
+
+canvas {
+  max-width: 300px;
+  max-height: 300px;
+  background-color: rgb(255, 255, 255);
+  padding-top: 30px;
+}
+
+form {
+  width: 300px;
+  height: 20px;
+  margin: 0 auto;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-top: 500px;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.skill-set {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  font-size: 30px;
+  padding-bottom: 60px;
+}

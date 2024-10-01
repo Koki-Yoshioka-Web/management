@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Caveat", cursive;
+}
+
+.netflix-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* ズームインアニメーション */
+@keyframes zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* グロー効果アニメーション */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.75),
+      0 0 40px rgba(255, 0, 0, 1);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.75), 0 0 40px rgba(255, 0, 0, 1),
+      0 0 80px rgba(255, 0, 0, 1);
+  }
+}
+
+.netflix-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  font-size: 5em;
+  color: #ffffff;
+  text-align: center;
+  opacity: 1;
+  animation: netflix-animation 3s forwards;
+  animation-timing-function: ease-in;
+  animation-delay: 1.5s;
+}
+
+@keyframes netflix-animation {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(50);
+  }
+}
